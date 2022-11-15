@@ -17,4 +17,20 @@ describe('Add one product', () => {
         // Then
         expect((await productGateway.listAll()).length).toEqual(initalLength + 1)
     })
+
+    it('should return the given product',async () => {
+        // Given
+        const guitare = { id: 'abc123', name: 'Guitare' }
+        const basse = { id: 'de456', name: 'Basse' }
+        const productGateway = new InMemoryProductGateway()
+        productGateway.feedWith([guitare, basse])
+
+        const newProduct = { id: 'ghi789', name: 'Piano'}
+  
+        // When
+        const res = await productGateway.add(newProduct)
+        
+        // Then
+        expect(res).toEqual(newProduct)
+    })
 })
