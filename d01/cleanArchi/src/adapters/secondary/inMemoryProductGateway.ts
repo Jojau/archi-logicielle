@@ -17,4 +17,9 @@ export class InMemoryProductGateway implements ProductGateway {
       throw new Error("404 product not found");
     return Promise.resolve(this.products.find(x => x.id === id)!)
   }
+
+  add(newProduct: Product): Promise<Product> {
+    this.products.push(newProduct)
+    return Promise.resolve(this.products[this.products.length - 1])
+  }
 }
