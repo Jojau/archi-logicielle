@@ -16,9 +16,12 @@ app.get('/products', async (req, res) => {
 })
 
 app.get('/products/:id', async (req, res) => {
-  // Marche pas si le produit existe pas
-  const product = await getOneProductById(req.params.id,  productGateway)
-  res.send(JSON.stringify(product))
+  try {
+    const product = await getOneProductById(req.params.id,  productGateway)
+    res.send(JSON.stringify(product))
+  } catch (error) {
+    res.send("ERREUR")
+  }
 })
 
 export default app
