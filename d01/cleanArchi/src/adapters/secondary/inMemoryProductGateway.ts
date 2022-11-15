@@ -13,13 +13,8 @@ export class InMemoryProductGateway implements ProductGateway {
   }
 
   async getOneById(id: string): Promise<Product> {
-    if (!this.products.find(x => x.id === id)){
-      return Promise.resolve({
-        id: 'NaN',
-        name: 'Produit inconnu'
-      })
-    } else {
-      return Promise.resolve(this.products.find(x => x.id === id))
-    }
+    if (!this.products.find(x => x.id === id))
+      throw new Error("404 product not found");
+    return Promise.resolve(this.products.find(x => x.id === id))
   }
 }
