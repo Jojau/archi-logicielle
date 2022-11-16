@@ -7,4 +7,9 @@ export class InLocalStorageCartGateway implements CartGateway {
       products = []
     return Promise.resolve(products)
   }
+
+  setProducts(...products: any[]): Promise<Boolean> {
+    localStorage.setItem('cartProducts', JSON.stringify(products))
+    return Promise.resolve(true)
+  }
 }

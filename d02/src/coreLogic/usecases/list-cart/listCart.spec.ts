@@ -24,4 +24,23 @@ describe('List the products in the cart', () => {
             expect(cartStore.products).toEqual([])
         })
     })
+
+    describe('The cart has products', () => {
+        it('should list the products of the cart', () => {
+            const myTestCart = [
+                {
+                    id: 'abc123',
+                    quantity: 1
+                },
+                {
+                    id: 'def456',
+                    quantity: 2
+                }
+            ]
+            cartGateway.setProducts(myTestCart)
+
+            listCart(cartGateway)
+            expect(cartStore.products).toEqual(myTestCart)
+        })
+    })
 })
