@@ -1,7 +1,7 @@
 import { createPinia, setActivePinia } from 'pinia'
 import { useProductStore } from '~/src/store/product'
 import { listProducts } from '~/src/coreLogic/usecases/product-listing/listProducts'
-import { InMemoryProductGateway } from '~/src/adapters/secondary/InMemoryProductGateway'
+import { InMemoryProductGateway } from '~/src/adapters/secondary/gateways/product/InMemoryProductGateway'
 
 describe('List products', () => {
   let productStore: any

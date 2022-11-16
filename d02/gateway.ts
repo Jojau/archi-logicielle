@@ -1,5 +1,5 @@
-import { InMemoryProductGateway } from '~/src/adapters/secondary/InMemoryProductGateway'
-import { InMemoryWithDelayProductGateway } from '~/src/adapters/secondary/InMemoryWithDelayProductGateway'
+import { InMemoryProductGateway } from '~/src/adapters/secondary/gateways/product/InMemoryProductGateway'
+import { InMemoryWithDelayProductGateway } from '~/src/adapters/secondary/gateways/product/InMemoryWithDelayProductGateway'
 
 // export const productGateway = new InMemoryProductGateway()
 export const productGateway = new InMemoryWithDelayProductGateway()

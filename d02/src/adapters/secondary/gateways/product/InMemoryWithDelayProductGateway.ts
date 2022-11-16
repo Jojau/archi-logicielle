@@ -1,4 +1,4 @@
-import { InMemoryProductGateway } from '~/src/adapters/secondary/InMemoryProductGateway'
+import { InMemoryProductGateway } from '~/src/adapters/secondary/gateways/product/InMemoryProductGateway'
 
 export class InMemoryWithDelayProductGateway extends InMemoryProductGateway {
   async listAll(): Promise<Array<any>> {
